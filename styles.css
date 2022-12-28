@@ -12,6 +12,12 @@
    /* ==========================================================================
       Start of custom Webflow CSS
       ========================================================================== */
+
+    .w-webflow-badge {
+        display: None !important;
+        visibility: hidden !important;
+     }
+
    .w-layout-grid {
      display: -ms-grid;
      display: grid;
