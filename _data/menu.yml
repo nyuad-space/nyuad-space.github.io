@@ -1,0 +1,74 @@
+main:
+  - name: Home
+    url: /
+    weight: 1
+  - name: About Us
+    url: /about/
+    weight: 2
+  - name: Projects
+    url: /projects/
+    weight: 3
+    child:
+      - name: "Haloship"
+        icon: "/assets/images/icons/spaceport.svg"
+        icon_darkmode: "/assets/images/icons/spaceport-white.svg"
+        description: "Spaceport America Cup 2023"
+        url: /projects/haloship/
+      - name: "Hold Down Release Mechanism (HDRM)"
+        icon: "/assets/images/icons/jpl.svg"
+        icon_darkmode: "/assets/images/icons/jpl-white.svg"
+        description: "JPL Crowdsourcing Initiative"
+        url: /projects/hdrm/
+      - name: "CHIME"
+        icon: "/assets/images/icons/nanoracks.svg"
+        icon_darkmode: "/assets/images/icons/nanoracks-white.svg"
+        description: "Educational Payload Built by NYU Abu Dhabi Students"
+        url: /projects/chime/
+  # - name: The Team
+  #   url: /team/
+  #   weight: 4
+  # - name: Blog
+  #   url: /blog/
+  #   weight: 5
+  - name: Contact
+    url: /contact/
+    weight: 6
+  
+
+footer_primary:
+  - name: "Haloship"
+    url: /projects/haloship/
+  - name: "CHIME"
+    url: /projects/chime/
+  - name: "Hold Down & Release Mechanism (HDRM)"
+    url: /projects/hdrm/
+
+footer_secondary:
+  - name: Home
+    url: /
+    weight: 2
+  - name: About Us
+    url: /about/
+    weight: 3
+  - name: Projects
+    url: /projects/
+    weight: 4
+  # - name: The Team
+  #   url: /team/
+  #   weight: 1
+  - name: nyuad.io
+    url: https://nyuad.io/en
+    weight: 2
+
+footer_tertiary:
+  - name: Privacy Policy
+    url: /privacy-policy/
+    weight: 1
+  - name: Terms and Conditions
+    url: /terms-and-conditions/
+    weight: 2
+
+bottom:
+  - name: nyuad.io
+    url: https://nyuad.io/en
+    weight: 5
