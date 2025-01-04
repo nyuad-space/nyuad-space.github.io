@@ -11,7 +11,7 @@ body_classes: page-category
           title=page.title
           description=page.description
           image=page.image
-          badge="partner"
+          badge="category"
         %}
       </div>
     </div>
@@ -20,20 +20,64 @@ body_classes: page-category
 
 <div class="section pt-0">
   <div class="container">
+
+    {% comment %}
+      1) Get the current category from page.title
+    {% endcomment %}
     {% assign category = page.title %}
-    {% for post in site.categories[category] %}
-      <div class="row">
-        <div class="col-12 col-md-8 mb-2">
-          {% include theme/cards/card-post.html 
-            title=post.title
-            date=post.date
-            description=post.description 
-            thumbnail=post.thumbnail 
-            url=post.url 
-            style="list"
-          %}
+
+    {% comment %}
+      2) Loop over all posts in this category 
+         using Jekyll's built-in site.categories array.
+    {% endcomment %}
+    {% if site.categories[category] %}
+      <h2 class="pt-2 mb-2">Posts in "{{ category }}"</h2>
+      {% for post in site.categories[category] %}
+        <div class="row mb-4">
+          <div class="col-12 col-md-8">
+            {% include theme/cards/card-post.html 
+              title=post.title
+              date=post.date
+              description=post.description 
+              thumbnail=post.thumbnail 
+              url=post.url 
+              style="list"
+            %}
+          </div>
         </div>
+      {% endfor %}
+    {% else %}
+      <p>No posts found in this category.</p>
+    {% endif %}
+
+    {% comment %}
+      3) Next, filter projects that contain this category 
+         in their front matter categories array.
+    {% endcomment %}
+    {% assign category_projects = site.projects | where_exp: "proj", "proj.categories contains category" %}
+
+    {% if category_projects.size > 0 %}
+      <hr/>
+      <h2 class="pt-2 mb-2">Projects in "{{ category }}"</h2>
+      <div class="row">
+        {% for proj in category_projects %}
+          <div class="col-12 col-md-6 mb-gutter mt-gutter mt-md-0">
+            {% include theme/cards/card-project.html
+              title=proj.title
+              description=proj.description
+              thumbnail=proj.thumbnail
+              categories=proj.categories
+              date=proj.date
+              url=proj.url
+              client=proj.client
+            %}
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-</div>
+    {% else %}
+      <hr/>
+      <p>No projects found in this category.</p>
+    {% endif %}
+
+  </div><!-- /.container -->
+</div><!-- /.section -->

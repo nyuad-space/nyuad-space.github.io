@@ -23,8 +23,9 @@ collections:
   posts:
     output: true
     permalink: /blog/:path/
-  # team:
-  #   output: true
+  team:
+    output: true
+    permalink: /team/:path/
 
 defaults:
   - scope:
@@ -50,11 +51,11 @@ defaults:
       path: "pages"
     values:
       permalink: /:basename/
-  # - scope:
-  #     path: ""
-  #     type: "team"
-  #   values:
-  #     layout: "team"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team"
 
 # SCSS
 sass:
@@ -161,7 +162,7 @@ menu:
 footer:
   enable_footer: true # show/hide the entire footer
   footer_title: "nyuad.space"
-  footer_description: "Made in the EDS with streetCat and ❤️"
+  footer_description: "Made in the EDS with <strong><a href='https://www.instagram.com/iamstreetcat/' target='_blank' rel='noopener'>streetCat</a></strong> and ❤️"
   enable_social_media_icons: true
   enable_contact_details: false
   enable_menu_footer_primary: true
@@ -174,5 +175,5 @@ footer:
 bottom:
   enable_bottom: true # show/hide the entire bottom (below the footer)
   enable_bottom_menu: false # if enabled, the bottom menu can be edited in `_data/menu.yml`
-  copyright_text: "© 2023 nyuad.space"
+  copyright_text: "© 2024 nyuad.space"
 

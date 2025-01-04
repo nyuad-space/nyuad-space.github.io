@@ -9,6 +9,7 @@ body_classes: page-project
   <div class="container">
     <div class="row">
 
+      <!-- LEFT COLUMN: Title, Categories, etc. -->
       <div class="col-12 col-md-6 mb-4">
 
         {% if page.title %}
@@ -19,38 +20,110 @@ body_classes: page-project
 
         {% if page.categories %}
           <div class="project-categories">
-          {% include framework/blocks/components/categories-badges.html 
+            {% include framework/blocks/components/categories-badges.html 
               categories=page.categories
-          %}
+            %}
           </div>
         {% endif %}
 
+        <!-- Uncomment if you need date
         {% if page.date %}
           <div class="project-date">
             <strong>Date </strong><span>{{ page.date | date_to_long_string }}</span>
           </div>
         {% endif %}
+        -->
 
-        {% if page.client %}
-          <div class="project-client">
-            <strong>Venue </strong><span>{{ page.client }}</span>
+        {% if page.years %}
+          <div class="project-location">
+            <strong>Years </strong><span>{{ page.years }}</span>
           </div>
         {% endif %}
 
-        {% if page.role %}
-          <div class="project-role">
-            <strong>Role </strong><span>{{ page.role }}</span>
+        {% if page.locations %}
+          <div class="project-location">
+            <strong>Locations </strong><span>{{ page.locations }}</span>
           </div>
         {% endif %}
 
-      </div>
+        {% if page.partners %}
+          <div class="project-partner">
+            <strong>Partners </strong><span>{{ page.partners }}</span>
+          </div>
+        {% endif %}
 
+        {% comment %}
+          NEW: Student Team listing, comma-separated, compact.
+          Each link uses only the first name as slug.
+        {% endcomment %}
+        {% if page.students %}
+        <div class="d-flex align-items-start project-student">
+          <!-- Left Box: Team Label -->
+          <div class="team-label">
+            <strong>Team </strong>
+          </div>
+          <!-- Right Box: Team Members -->
+          <div class="team-list ms-1">
+            {% for student in page.students %}
+              {% assign firstName = student | split: " " | first | slugify %}
+              <a href="/team/{{ firstName }}" class="small">
+                {{ student }}
+              </a>
+              {% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      
+      </div> <!-- /.col-6 -->
+
+      <!-- RIGHT COLUMN: Blurb -->
       <div class="col-12 col-md-6 mb-4">
-        <div class="content">{{ content }}</div>
+        <div class="content">{{ page.blurb }}</div>
       </div>
 
-    </div>
+    </div> <!-- /.row -->
 
+    <!-- SECTION: Optional heading image (centered) -->
+    <div class="section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            {% include framework/blocks/sections/heading.html
+              image=page.image
+              align="center"
+            %}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SECTION: Authors + main content -->
+    <div class="section pt-0">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            
+            {% if page.authors %}
+              <div class="mb-2">
+                {% for author in page.authors %}
+                  {% include framework/blocks/components/author.html 
+                    author=author
+                    style='row'
+                    show_author_name=true
+                  %}
+                {% endfor %}
+              </div>
+            {% endif %}
+            
+            <div class="content">{{ content }}</div>
+        
+          </div> <!-- /.col-8 -->
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+    </div> <!-- /.section -->
+
+    <!-- GALLERY / MASONRY IMAGES -->
     <div class="row">
       <div class="col">
         <div class="gallery gallery-masonry">
@@ -58,15 +131,16 @@ body_classes: page-project
             <div class="gallery-item">
               <div class="gallery-image"><img src="{{ item.image | relative_url }}"/></div>
               {% if item.caption %}
-              <div class="gallery-caption">{{ item.caption }}</div>
+                <div class="gallery-caption">{{ item.caption }}</div>
               {% endif %}
             </div>
           {% endfor %}
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+  </div> <!-- /.container -->
+</div> <!-- /.section -->
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
@@ -74,8 +148,8 @@ body_classes: page-project
   var grid = document.querySelector('.gallery');
   var msnry;
 
-  imagesLoaded( grid, function() {
-    msnry = new Masonry( grid, {
+  imagesLoaded(grid, function() {
+    msnry = new Masonry(grid, {
       itemSelector: '.gallery-item',
       percentPosition: true,
     });

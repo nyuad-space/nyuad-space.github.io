@@ -1,0 +1,56 @@
+.card-person {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  background-color: var(--color-card-bg);
+  overflow: hidden;
+  position: relative;
+  border-radius: $card-border-radius;
+
+  .card-thumbnail {
+    border-radius: $card-border-radius;
+    overflow: hidden;
+
+    a {
+      display: block;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .card-content {
+    padding: 15px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .card-title {
+    h2,
+    h3 {
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+      margin: 0;
+    }
+    a {
+      color: var(--color-base-text);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .card-position {
+    font-size: 16px;
+    color: var(--color-base-text-2);
+    margin: 5px 0;
+  }
+}

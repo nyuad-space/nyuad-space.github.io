@@ -5,9 +5,13 @@ main:
   - name: About Us
     url: /about/
     weight: 2
+  - name: Team
+    url: /team/
+    weight: 3
+
   - name: Projects
     url: /projects/
-    weight: 3
+    weight: 4
     child:
       - name: "Haloship"
         icon: "/assets/images/icons/spaceport.svg"
@@ -24,9 +28,6 @@ main:
         icon_darkmode: "/assets/images/icons/nanoracks-white.svg"
         description: "Educational Payload Built by NYU Abu Dhabi Students"
         url: /projects/chime/
-  # - name: The Team
-  #   url: /team/
-  #   weight: 4
   # - name: Blog
   #   url: /blog/
   #   weight: 5
@@ -36,11 +37,11 @@ main:
   
 
 footer_primary:
-  - name: "Haloship"
+  - name: "HALOSHIP"
     url: /projects/haloship/
   - name: "CHIME"
     url: /projects/chime/
-  - name: "Hold Down & Release Mechanism (HDRM)"
+  - name: "HDRM"
     url: /projects/hdrm/
 
 footer_secondary:
@@ -50,12 +51,12 @@ footer_secondary:
   - name: About Us
     url: /about/
     weight: 3
+  - name: Team
+    url: /team/
+    weight: 1
   - name: Projects
     url: /projects/
     weight: 4
-  # - name: The Team
-  #   url: /team/
-  #   weight: 1
   - name: nyuad.io
     url: https://nyuad.io/en
     weight: 2

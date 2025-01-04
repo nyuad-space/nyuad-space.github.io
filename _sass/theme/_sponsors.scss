@@ -1,0 +1,10 @@
+.sponsor-logo {
+  max-width: 100%;
+  width: 200px; /* optional fixed width if you like */
+  transition: filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.sponsor-logo:hover {
+  filter: none; /* removes grayscale on hover */
+}

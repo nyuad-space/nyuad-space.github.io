@@ -1,0 +1,101 @@
+---
+layout: default
+body_classes: page-person
+---
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 col-md-6 mb-4">
+
+        {% if page.name %}
+          <div class="person-heading">
+            <h1>{{ page.name }}</h1>
+          </div>
+        {% endif %}
+
+        {% if page.position %}
+          <div class="person-position">
+            <strong>Position </strong><span>{{ page.position }}</span>
+          </div>
+        {% endif %}
+
+        {% if page.linkedin %}
+          <div class="person-linkedin">
+            <strong>LinkedIn </strong>
+            <span>
+              <a href="{{ page.linkedin }}" target="_blank" rel="noopener">{{ page.linkedin }}</a>
+            </span>
+          </div>
+        {% endif %}
+
+        {% if page.instagram %}
+          <div class="person-instagram">
+            <strong>Socials </strong>
+            <span>
+              <a href="{{ page.instagram }}" target="_blank" rel="noopener">{{ page.instagram }}</a>
+            </span>
+          </div>
+        {% endif %}
+
+        {% if page.website %}
+          <div class="person-website">
+            <strong>Website </strong>
+            <span>
+              <a href="{{ page.website }}" target="_blank" rel="noopener">{{ page.website }}</a>
+            </span>
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="col-12 col-md-6 mb-4">
+        <div class="content">
+          {% if page.description %}
+            <p>{{ page.description }}</p>
+          {% endif %}
+          {{ content }}
+        </div>
+      </div>
+
+    </div> <!-- /.row -->
+
+    {% comment %}
+      FILTER all projects that include this person's name in their "students" array.
+    {% endcomment %}
+    {% assign person_projects = site.projects | where_exp: "proj", "proj.students contains page.name" %}
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <hr/>
+        <h2 class="pt-2 mb-2">Projects by {{ page.name }}</h2>
+      </div>
+    </div>
+
+    {% if person_projects.size > 0 %}
+      <div class="row">
+        {% for proj in person_projects %}
+          <div class="col-12 col-md-6 mb-gutter mt-gutter mt-md-0">
+            {% include theme/cards/card-project.html
+              title=proj.title
+              description=proj.description
+              thumbnail=proj.thumbnail
+              categories=proj.categories
+              date=proj.date
+              url=proj.url
+              client=proj.client
+            %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="row">
+        <div class="col-12">
+          <p>No projects found for {{ page.name }}.</p>
+        </div>
+      </div>
+    {% endif %}
+
+  </div> <!-- /.container -->
+</div> <!-- /.section -->

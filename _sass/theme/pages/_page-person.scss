@@ -1,0 +1,113 @@
+.page-person {
+  .person-heading {
+    h1 {
+      font-size: 36px;
+      letter-spacing: -2px;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 10px;
+
+      @include media-breakpoint-up(md) {
+        font-size: 48px;
+      }
+    }
+  }
+
+  .person-position {
+    margin-bottom: 10px;
+    font-size: 16px;
+
+    strong {
+      display: inline-block;
+      font-weight: 600;
+      width: 70px;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: 400;
+    }
+  }
+
+  .person-linkedin {
+    margin-bottom: 10px;
+    font-size: 16px;
+
+    strong {
+      display: inline-block;
+      font-weight: 600;
+      width: 70px;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: 400;
+    }
+
+    a {
+      color: var(--color-link);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .person-website {
+    margin-bottom: 10px;
+    font-size: 16px;
+
+    strong {
+      display: inline-block;
+      font-weight: 600;
+      width: 70px;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: 400;
+    }
+
+    a {
+      color: var(--color-link);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .person-instagram {
+    margin-bottom: 10px;
+    font-size: 16px;
+
+    strong {
+      display: inline-block;
+      font-weight: 600;
+      width: 70px;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: 400;
+    }
+
+    a {
+      color: var(--color-link);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+  .content {
+    @include media-breakpoint-up(md) {
+      width: 90%;
+    }
+  }
+}

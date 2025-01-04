@@ -8,8 +8,8 @@ body_classes: page-home
     <div class="row">
       <div class="col-12">
         {% include framework/blocks/sections/heading.html
-        title=page.title
-        description=page.description
+          title=page.title
+          description=page.description
         %}
       </div>
     </div>
@@ -21,18 +21,17 @@ body_classes: page-home
 <div class="section pt-0">
   <div class="container">
     <div class="row">
-     
       {% for card in cards limit: 6 %}
       <div
         class="col-12 col-md-6 mb-gutter mt-gutter {% if forloop.first %}mt-0{% endif %} {% if forloop.last %}mb-0{% endif %} mt-md-0">
         {% include theme/cards/card-project.html
-        title=card.title
-        description=card.description
-        thumbnail=card.thumbnail
-        categories=card.categories
-        date=card.date
-        url=card.url
-        client=card.client
+          title=card.title
+          description=card.description
+          thumbnail=card.thumbnail
+          categories=card.categories
+          date=card.date
+          url=card.url
+          client=card.client
         %}
       </div>
       {% endfor %}
@@ -41,37 +40,45 @@ body_classes: page-home
 </div>
 {% endif %}
 
-<!-- {% assign cards = site.posts %}
-{% if cards.size > 0 %}
+{%- comment -%}
+  SPONSORS SECTION
+{%- endcomment -%}
+{% if page.sponsors %}
 <div class="section bg-base-bg-2">
   <div class="container">
-    <div class="row">
-      {% include framework/blocks/components/grid-header.html heading="Recent Posts" %}
-      {% for card in cards limit: 3 %}
-      <div
-        class="col-12 col-md-4 mb-gutter mt-gutter {% if forloop.first %}mt-0{% endif %} {% if forloop.last %}mb-0{% endif %} mt-md-0">
-        {% include theme/cards/card-post.html
-        title=card.title
-        description=card.description
-        url=card.url
-        %}
+    <div class="row justify-content-center">
+      <!-- Optional Heading for Sponsors -->
+      <div class="col-12">
+        <h2 class="text-center mb-4">Our Sponsors</h2>
+      </div>
+
+      {% for sponsor in page.sponsors %}
+      <div class="col-6 col-md-3 mb-4 sponsor-wrapper text-center">
+        <a href="{{ sponsor.url }}" target="_blank" rel="noopener">
+          <img 
+            src="{{ sponsor.image | relative_url }}" 
+            alt="{{ sponsor.name }}" 
+            class="sponsor-logo grayscale-img"
+          />
+        </a>
       </div>
       {% endfor %}
     </div>
   </div>
 </div>
-{% endif %} -->
+{% endif %}
+
+<!-- (Optional) The rest of your page content, e.g. blog section, subscribe, etc. -->
 
 {% if site.mailchimp.form_action_url %}
 {% if page.subscribe %}
-  <div class="section bg-base-bg-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-12"></div>
-        {% include framework/blocks/components/subscribe.html %}
-        </div>
-      </div>
+<div class="section bg-base-bg-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-12"></div>
+      {% include framework/blocks/components/subscribe.html %}
     </div>
   </div>
+</div>
 {% endif %}
 {% endif %}

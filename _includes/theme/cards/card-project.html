@@ -26,9 +26,9 @@
         <a href="{{ url | relative_url }}">{{ title }}</a>
       </h2>
     </div>
-    {% if client %}
-      <div class="card-client">
-        {{ client }}
+    {% if description %}
+      <div class="card-description">
+        {{ description }}
       </div>
     {% endif %}
   </div>
