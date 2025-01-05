@@ -16,7 +16,7 @@ students:
   - "Nasheed Ur Rehman"
   - "Yongbin Ko"
   - "Nishant Aswani"
-  - "Euison Choi"
+  - "Euisun Choi"
   - "Hamza Anver"
   - "Dhiyaa Al Jorf"
   - "streetCat"

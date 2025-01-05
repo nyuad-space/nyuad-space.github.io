@@ -1,7 +1,8 @@
-{% assign name = include.name %}
-{% assign position = include.position %}
-{% assign thumbnail = include.thumbnail %}
-{% assign url = include.url %}
+{% assign name       = include.name %}
+{% assign thumbnail  = include.thumbnail %}
+{% assign url        = include.url %}
+{% assign positions  = include.positions %}
+{% assign year       = include.year %}
 
 <div class="card card-person">
 
@@ -20,10 +21,17 @@
       </h2>
     </div>
 
-    {% if position %}
+    {% comment %}
+      Look up the position for the 'year' we passed.
+      Example: positions["2023"] might be "Team Lead".
+    {% endcomment %}
+    {% if positions and year %}
+      {% assign position = positions[year] %}
+      {% if position %}
       <div class="card-position">
         {{ position }}
       </div>
+      {% endif %}
     {% endif %}
   </div>
 

@@ -4,16 +4,19 @@ body_classes: page-team
 ---
 
 {% comment %}
-  Split team by year 2023 vs. 2025
-  (Adjust or add more years as needed)
+  We want everyone who has positions["2023"] or positions["2025"] defined, i.e. 
+  "2023" or "2025" must be a key in the person's positions map.
+  
+  We use where_exp to find those who have positions != nil 
+  AND their positions object "contains" the string "2023"/"2025".
 {% endcomment %}
-{% assign team_2023 = site.team | where: "year", 2023 %}
-{% assign team_2025 = site.team | where: "year", 2025 %}
+{% assign team_2023 = site.team | where_exp: "person", "person.positions != nil and person.positions contains '2023'" %}
+{% assign team_2025 = site.team | where_exp: "person", "person.positions != nil and person.positions contains '2025'" %}
 
 <div class="section">
   <div class="container">
 
-    <!-- Page heading & description -->
+    <!-- Optional heading for the Team page -->
     {% include framework/blocks/sections/heading.html
       title=page.title
       description=page.description
@@ -25,10 +28,11 @@ body_classes: page-team
       {% for person in team_2025 %}
       <div class="col-12 col-md-3 mb-gutter">
         {% include theme/cards/card-person.html
-           name=person.name
-           position=person.position
-           thumbnail=person.thumbnail
-           url=person.url
+          name=person.name
+          thumbnail=person.thumbnail
+          url=person.url
+          positions=person.positions
+          year="2025"
         %}
       </div>
       {% endfor %}
@@ -40,14 +44,15 @@ body_classes: page-team
       {% for person in team_2023 %}
       <div class="col-12 col-md-3 mb-gutter">
         {% include theme/cards/card-person.html
-           name=person.name
-           position=person.position
-           thumbnail=person.thumbnail
-           url=person.url
+          name=person.name
+          thumbnail=person.thumbnail
+          url=person.url
+          positions=person.positions
+          year="2023"
         %}
       </div>
       {% endfor %}
     </div>
 
-  </div>
-</div>
+  </div><!-- /.container -->
+</div><!-- /.section -->

@@ -15,11 +15,19 @@ body_classes: page-person
           </div>
         {% endif %}
 
-        {% if page.position %}
-          <div class="person-position">
-            <strong>Position </strong><span>{{ page.position }}</span>
+        <!-- {% if page.positions %}
+          <div class="person-linkedin">
+            <strong>Positions</strong>
+            <ul class="list-unstyled">
+              {% for y in page.positions %}
+              <li>
+                <strong>{{ y[0] }}:</strong>
+                {{ y[1] }}
+              </li>
+              {% endfor %}
+            </ul>
           </div>
-        {% endif %}
+        {% endif %} -->
 
         {% if page.linkedin %}
           <div class="person-linkedin">
