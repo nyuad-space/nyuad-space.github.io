@@ -3,13 +3,6 @@ layout: default
 body_classes: page-team
 ---
 
-{% comment %}
-  We want everyone who has positions["2023"] or positions["2025"] defined, i.e. 
-  "2023" or "2025" must be a key in the person's positions map.
-  
-  We use where_exp to find those who have positions != nil 
-  AND their positions object "contains" the string "2023"/"2025".
-{% endcomment %}
 {% assign team_2023 = site.team | where_exp: "person", "person.positions != nil and person.positions contains '2023'" %}
 {% assign team_2025 = site.team | where_exp: "person", "person.positions != nil and person.positions contains '2025'" %}
 
