@@ -3,13 +3,12 @@ layout: default
 body_classes: page-team
 ---
 
-{% assign team_2023 = site.team | where_exp: "person", "person.positions != nil and person.positions contains '2023'" %}
-{% assign team_2025 = site.team | where_exp: "person", "person.positions != nil and person.positions contains '2025'" %}
+{% assign team_2023 = site.team | where_exp: "person", "person.positions and person.positions contains '2023'" %}
+{% assign team_2025 = site.team | where_exp: "person", "person.positions and person.positions contains '2025'" %}
 
 <div class="section">
   <div class="container">
 
-    <!-- Optional heading for the Team page -->
     {% include framework/blocks/sections/heading.html
       title=page.title
       description=page.description
@@ -47,5 +46,55 @@ body_classes: page-team
       {% endfor %}
     </div>
 
-  </div><!-- /.container -->
-</div><!-- /.section -->
+  </div>
+</div>
+---
+layout: default
+body_classes: page-team
+---
+
+{% assign team_2023 = site.team | where_exp: "person", "person.positions and person.positions contains '2023'" %}
+{% assign team_2025 = site.team | where_exp: "person", "person.positions and person.positions contains '2025'" %}
+
+<div class="section">
+  <div class="container">
+
+    {% include framework/blocks/sections/heading.html
+      title=page.title
+      description=page.description
+    %}
+
+    <!-- Team 2025 -->
+    <h2 class="text-center pt-2 mb-2">2025</h2>
+    <div class="row justify-content-center">
+      {% for person in team_2025 %}
+      <div class="col-12 col-md-3 mb-gutter">
+        {% include theme/cards/card-person.html
+          name=person.name
+          thumbnail=person.thumbnail
+          url=person.url
+          positions=person.positions
+          year="2025"
+        %}
+      </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Team 2023 -->
+    <h2 class="text-center pt-2 mb-2">2023</h2>
+    <div class="row justify-content-center">
+      {% for person in team_2023 %}
+      <div class="col-12 col-md-3 mb-gutter">
+        {% include theme/cards/card-person.html
+          name=person.name
+          thumbnail=person.thumbnail
+          url=person.url
+          positions=person.positions
+          year="2023"
+        %}
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
