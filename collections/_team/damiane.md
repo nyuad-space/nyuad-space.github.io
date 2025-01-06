@@ -5,7 +5,7 @@ name: Damiane Kapanadze
 positions:
   "2025": "Structures & Recovery"
 thumbnail: /assets/images/team/damiane.png
-linkedin: "https://www.linkedin.com/in/andre-llaneta-6b3221258/"
+linkedin: "https://www.linkedin.com/in/damianekapanadze/"
 # website: "https://website.com/"
 description: "Electrical Engineering."
 ---
