@@ -17,7 +17,7 @@ body_classes: page-team
       {% for person in site.team %}
         {% if person.positions and person.positions['2025'] %}
           <div class="col-12 col-md-3 mb-gutter">
-            {% include theme/cards/card-person.html
+            {% include framework/theme/cards/card-person.html
               name=person.name
               thumbnail=person.thumbnail
               url=person.url
@@ -35,7 +35,7 @@ body_classes: page-team
       {% for person in site.team %}
         {% if person.positions and person.positions['2023'] %}
           <div class="col-12 col-md-3 mb-gutter">
-            {% include theme/cards/card-person.html
+            {% include framework/theme/cards/card-person.html
               name=person.name
               thumbnail=person.thumbnail
               url=person.url
