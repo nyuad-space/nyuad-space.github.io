@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Haloship - nyuad.space</title>
+
+  <meta name="description" content="A Reusable Experimental Sounding Rocket Featuring a Dual-Redundant Parachute Release System."/>
+
+
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://localhost:4000/projects/haloship/"/>
+
+  <meta property="og:title" content="Haloship"/>
+
+
+  <meta name="description" content="A Reusable Experimental Sounding Rocket Featuring a Dual-Redundant Parachute Release System."/>
+
+
+  <meta property="og:image" content="/assets/images/projects/haloship/project-card.png"/>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@nyuad_space" />
+<meta name="twitter:creator" content="@nyuad_space" />
+
+    <link rel="icon" href="/assets/images/favicon/favicon.png">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fira+Mono&display=swap" rel="stylesheet">
+
+    
+      <script>
+          localStorage.getItem('darkMode') === 'true' && document.documentElement.setAttribute('data-mode', 'dark');
+      </script>
+    
+
+  </head>
+<body class="page page-project has-fixed-header">
+
+
+<div class="menu-main-mobile " id="menu-main-mobile">
+  
+  <div class="menu-main-mobile-top">
+    <div id="close-overlay" class="menu-main-close">
+      <div class="hamburger"></div>
+    </div>
+  </div>
+
+  <div class="menu-main-mobile-center">
+    
+      <ul class="menu">
+        
+          <li class="menu-item-home">
+            <a href="/">Home</a>
+          </li>
+        
+          <li class="menu-item-about us">
+            <a href="/about/">About Us</a>
+          </li>
+        
+          <li class="menu-item-team">
+            <a href="/team/">Team</a>
+          </li>
+        
+          <li class="menu-item-projects">
+            <a href="/projects/">Projects</a>
+          </li>
+        
+          <li class="menu-item-contact">
+            <a href="/contact/">Contact</a>
+          </li>
+        
+      </ul>
+    
+  </div>
+
+  <div class="menu-main-mobile-bottom">
+    
+      
+
+<div class="social" id="social">
+  
+  <a href="https://github.com/nyuad-space" target="blank" title="Github">
+    <i class="fab fa-github"></i>
+  </a>
+  
+  <a href="https://twitter.com/nyuad_space" target="blank" title="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  <a href="https://www.instagram.com/nyuad.space/" target="blank" title="Instagram">
+    <i class="fab fa-instagram-square"></i>
+  </a>
+  
+</div>
+
+
+    
+    
+      <div class="dark-mode-switcher " id="dark-mode-container">
+  <div class="dark-mode-switch">
+    <svg class="dark-mode-icon-dark" data-name="Layer 1" fill="#000000" height="20px" viewbox="0 0 64 64" width="20px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+      <title>essential</title>
+      <path d="M33.28,58.24A26.95,26.95,0,0,1,24,6l.39-.13a2,2,0,0,1,2.4,2.87,22.42,22.42,0,0,0-1.51,18.75h0A22.47,22.47,0,0,0,54.09,40.8l.76-.3a2,2,0,0,1,2.24.48,2,2,0,0,1,.35,2.24,27,27,0,0,1-24.16,15ZM21.11,11.85a22.94,22.94,0,1,0,30,33.91A26.46,26.46,0,0,1,21.53,28.87h0A26.4,26.4,0,0,1,21.11,11.85Z"></path>
+    </svg>
+    <svg class="dark-mode-icon-light" fill="#000000" height="20px" style="enable-background: new 0 0 100 100;" version="1.1" viewbox="0 0 100 100" width="20px" x="0px" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
+      <g>
+        <path d="M50,75c-13.8,0-25-11.2-25-25s11.2-25,25-25s25,11.2,25,25S63.8,75,50,75z M50,33.3c-9.2,0-16.7,7.5-16.7,16.7   c0,9.2,7.5,16.7,16.7,16.7c9.2,0,16.7-7.5,16.7-16.7C66.7,40.8,59.2,33.3,50,33.3z"></path>
+      </g>
+      <g>
+        <path d="M50,100c-2.3,0-4.2-1.9-4.2-4.2v-8.3c0-2.3,1.9-4.2,4.2-4.2c2.3,0,4.2,1.9,4.2,4.2v8.3C54.2,98.1,52.3,100,50,100z    M17.5,86.7c-1.1,0-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.3,0-5.9l5.8-5.8c1.6-1.6,4.3-1.6,5.9,0c1.6,1.6,1.6,4.3,0,5.9l-5.8,5.8   C19.6,86.3,18.6,86.7,17.5,86.7z M82.5,86.7c-1.1,0-2.1-0.4-2.9-1.2l-5.8-5.8c-1.6-1.6-1.6-4.3,0-5.9s4.3-1.6,5.9,0l5.8,5.8   c1.6,1.6,1.6,4.3,0,5.9C84.6,86.3,83.6,86.7,82.5,86.7z M95.8,54.2h-8.3c-2.3,0-4.2-1.9-4.2-4.2c0-2.3,1.9-4.2,4.2-4.2h8.3   c2.3,0,4.2,1.9,4.2,4.2C100,52.3,98.1,54.2,95.8,54.2z M12.5,54.2H4.2C1.9,54.2,0,52.3,0,50c0-2.3,1.9-4.2,4.2-4.2h8.3   c2.3,0,4.2,1.9,4.2,4.2C16.7,52.3,14.8,54.2,12.5,54.2z M76.7,27.5c-1.1,0-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.3,0-5.9l5.8-5.8   c1.6-1.6,4.3-1.6,5.9,0c1.6,1.6,1.6,4.3,0,5.9l-5.8,5.8C78.8,27.1,77.7,27.5,76.7,27.5z M23.3,27.5c-1.1,0-2.1-0.4-2.9-1.2   l-5.8-5.8c-1.6-1.6-1.6-4.3,0-5.9c1.6-1.6,4.3-1.6,5.9,0l5.8,5.8c1.6,1.6,1.6,4.3,0,5.9C25.5,27.1,24.4,27.5,23.3,27.5z M50,16.7   c-2.3,0-4.2-1.9-4.2-4.2V4.2C45.8,1.9,47.7,0,50,0c2.3,0,4.2,1.9,4.2,4.2v8.3C54.2,14.8,52.3,16.7,50,16.7z"></path>
+      </g>
+    </svg>
+    <div class="ball"></div>
+  </div>
+</div>
+    
+  </div>
+
+</div>
+
+
+
+
+<div id="header" class='header header-fixed'>
+  <div class="container">
+    <div class="logos">
+  <div class="logo logo-desktop">
+    
+      <div class="logo-image">
+        <a href="/">
+          <img height="45px" width="auto" alt="nyuad.space Logo" src="/assets/images/logo/logo.png"/>
+        </a>
+      </div>
+    
+  
+    
+    
+  </div>
+
+  <div class="logo logo-desktop-invert">
+    
+    
+      <div class="logo-image">
+        <a href="/">
+          <img height="45px" width="auto" alt="nyuad.space Logo" src="/assets/images/logo/logo-invert.png"/>
+        </a>
+      </div>
+    
+  
+    
+    
+  </div>
+
+  <div class="logo logo-mobile">
+    
+    
+      <div class="logo-image">
+        <a href="/">
+          <img height="45px" width="auto" alt="nyuad.space Logo" src="/assets/images/logo/logo-mobile.png"/>
+        </a>
+      </div>
+    
+  
+    
+    
+  </div>
+
+
+  <div class="logo logo-mobile-invert">
+    
+    
+      <div class="logo-image">
+        <a href="/">
+          <img height="45px" width="auto" alt="nyuad.space Logo" src="/assets/images/logo/logo-invert-mobile.png"/>
+        </a>
+      </div>
+    
+  
+    
+
+  </div>
+
+</div>
+
+
+    <div class="menu-main">
+  <ul>
+    
+      
+        
+        <li class="">
+          <a href="/">Home</a>
+        </li>
+      
+    
+      
+        
+        <li class="">
+          <a href="/about/">About Us</a>
+        </li>
+      
+    
+      
+        
+        <li class="">
+          <a href="/team/">Team</a>
+        </li>
+      
+    
+      
+        <li class="menu-item-dropdown menu-item-Projects">
+          <a href="/projects/">Projects <i class="fa-solid fa-chevron-down"></i></a>
+          
+          <div class="dropdown-menu">
+            
+              <a href="/projects/haloship/" class="dropdown-item  active ">
+                
+                  <div class="dropdown-item-icon"><img src="/assets/images/icons/spaceport.svg" /></div>
+                
+                
+                  <div class="dropdown-item-icon icon-invert"><img src="/assets/images/icons/spaceport-white.svg" /></div>
+                
+
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-name">Haloship</div>
+                  <div class="dropdown-item-description">Spaceport America Cup 2023</div>
+                </div>
+
+              </a>
+
+            
+              <a href="/projects/hdrm/" class="dropdown-item ">
+                
+                  <div class="dropdown-item-icon"><img src="/assets/images/icons/jpl.svg" /></div>
+                
+                
+                  <div class="dropdown-item-icon icon-invert"><img src="/assets/images/icons/jpl-white.svg" /></div>
+                
+
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-name">Hold Down Release Mechanism (HDRM)</div>
+                  <div class="dropdown-item-description">JPL Crowdsourcing Initiative</div>
+                </div>
+
+              </a>
+
+            
+              <a href="/projects/chime/" class="dropdown-item ">
+                
+                  <div class="dropdown-item-icon"><img src="/assets/images/icons/nanoracks.svg" /></div>
+                
+                
+                  <div class="dropdown-item-icon icon-invert"><img src="/assets/images/icons/nanoracks-white.svg" /></div>
+                
+
+                <div class="dropdown-item-content">
+                  <div class="dropdown-item-name">CHIME</div>
+                  <div class="dropdown-item-description">Educational Payload Built by NYU Abu Dhabi Students</div>
+                </div>
+
+              </a>
+
+            
+          </div>
+
+        </li>
+      
+    
+      
+        
+        <li class="">
+          <a href="/contact/">Contact</a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+    
+      <div class="dark-mode-switcher " id="dark-mode-container">
+  <div class="dark-mode-switch">
+    <svg class="dark-mode-icon-dark" data-name="Layer 1" fill="#000000" height="20px" viewbox="0 0 64 64" width="20px" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+      <title>essential</title>
+      <path d="M33.28,58.24A26.95,26.95,0,0,1,24,6l.39-.13a2,2,0,0,1,2.4,2.87,22.42,22.42,0,0,0-1.51,18.75h0A22.47,22.47,0,0,0,54.09,40.8l.76-.3a2,2,0,0,1,2.24.48,2,2,0,0,1,.35,2.24,27,27,0,0,1-24.16,15ZM21.11,11.85a22.94,22.94,0,1,0,30,33.91A26.46,26.46,0,0,1,21.53,28.87h0A26.4,26.4,0,0,1,21.11,11.85Z"></path>
+    </svg>
+    <svg class="dark-mode-icon-light" fill="#000000" height="20px" style="enable-background: new 0 0 100 100;" version="1.1" viewbox="0 0 100 100" width="20px" x="0px" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
+      <g>
+        <path d="M50,75c-13.8,0-25-11.2-25-25s11.2-25,25-25s25,11.2,25,25S63.8,75,50,75z M50,33.3c-9.2,0-16.7,7.5-16.7,16.7   c0,9.2,7.5,16.7,16.7,16.7c9.2,0,16.7-7.5,16.7-16.7C66.7,40.8,59.2,33.3,50,33.3z"></path>
+      </g>
+      <g>
+        <path d="M50,100c-2.3,0-4.2-1.9-4.2-4.2v-8.3c0-2.3,1.9-4.2,4.2-4.2c2.3,0,4.2,1.9,4.2,4.2v8.3C54.2,98.1,52.3,100,50,100z    M17.5,86.7c-1.1,0-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.3,0-5.9l5.8-5.8c1.6-1.6,4.3-1.6,5.9,0c1.6,1.6,1.6,4.3,0,5.9l-5.8,5.8   C19.6,86.3,18.6,86.7,17.5,86.7z M82.5,86.7c-1.1,0-2.1-0.4-2.9-1.2l-5.8-5.8c-1.6-1.6-1.6-4.3,0-5.9s4.3-1.6,5.9,0l5.8,5.8   c1.6,1.6,1.6,4.3,0,5.9C84.6,86.3,83.6,86.7,82.5,86.7z M95.8,54.2h-8.3c-2.3,0-4.2-1.9-4.2-4.2c0-2.3,1.9-4.2,4.2-4.2h8.3   c2.3,0,4.2,1.9,4.2,4.2C100,52.3,98.1,54.2,95.8,54.2z M12.5,54.2H4.2C1.9,54.2,0,52.3,0,50c0-2.3,1.9-4.2,4.2-4.2h8.3   c2.3,0,4.2,1.9,4.2,4.2C16.7,52.3,14.8,54.2,12.5,54.2z M76.7,27.5c-1.1,0-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.3,0-5.9l5.8-5.8   c1.6-1.6,4.3-1.6,5.9,0c1.6,1.6,1.6,4.3,0,5.9l-5.8,5.8C78.8,27.1,77.7,27.5,76.7,27.5z M23.3,27.5c-1.1,0-2.1-0.4-2.9-1.2   l-5.8-5.8c-1.6-1.6-1.6-4.3,0-5.9c1.6-1.6,4.3-1.6,5.9,0l5.8,5.8c1.6,1.6,1.6,4.3,0,5.9C25.5,27.1,24.4,27.5,23.3,27.5z M50,16.7   c-2.3,0-4.2-1.9-4.2-4.2V4.2C45.8,1.9,47.7,0,50,0c2.3,0,4.2,1.9,4.2,4.2v8.3C54.2,14.8,52.3,16.7,50,16.7z"></path>
+      </g>
+    </svg>
+    <div class="ball"></div>
+  </div>
+</div>
+    
+    <div class="hamburger-trigger" id="toggle-menu-main-mobile">
+  <button class="hamburger">Menu</button>
+</div>
+  </div>
+</div>
+
+<div id="wrapper" class="wrapper">     
+  
+
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      <!-- LEFT COLUMN: Title, Categories, etc. -->
+      <div class="col-12 col-md-6 mb-4">
+
+        
+          <div class="project-heading">
+            <h1>Haloship</h1>
+          </div>
+        
+
+        
+          <div class="project-categories">
+            
+
+
+  
+    
+
+
+
+
+<div class="category-link">
+<a href="/category/high-power-rocketry">
+  High Power Rocketry
+</a>
+
+</div>
+  
+    
+
+
+
+
+<div class="category-link">
+<a href="/category/aerospace-engineering">
+  Aerospace Engineering
+</a>
+
+</div>
+  
+
+          </div>
+        
+
+        <!-- Uncomment if you need date
+        
+          <div class="project-date">
+            <strong>Date </strong><span>24 June 2023</span>
+          </div>
+        
+        -->
+
+        
+          <div class="project-location">
+            <strong>Years </strong><span>2022, 2023</span>
+          </div>
+        
+
+        
+          <div class="project-location">
+            <strong>Locations </strong><span>Abu Dhabi, UAE; New Mexico, US.</span>
+          </div>
+        
+
+        
+          <div class="project-partner">
+            <strong>Partners </strong><span><a href="https://spaceportamericacup.com/">Spaceport America Cup</a></span>
+          </div>
+        
+
+        
+        
+        <div class="d-flex align-items-start project-student">
+          <!-- Left Box: Team Label -->
+          <div class="team-label">
+            <strong>Team </strong>
+          </div>
+          <!-- Right Box: Team Members -->
+          <div class="team-list ms-1">
+            
+              
+              <a href="/team/nasheed" class="small">
+                Nasheed Ur Rehman
+              </a>
+              ,
+            
+              
+              <a href="/team/yongbin" class="small">
+                Yongbin Ko
+              </a>
+              ,
+            
+              
+              <a href="/team/nishant" class="small">
+                Nishant Aswani
+              </a>
+              ,
+            
+              
+              <a href="/team/euisun" class="small">
+                Euisun Choi
+              </a>
+              ,
+            
+              
+              <a href="/team/hamza" class="small">
+                Hamza Anver
+              </a>
+              ,
+            
+              
+              <a href="/team/dhiyaa" class="small">
+                Dhiyaa Al Jorf
+              </a>
+              ,
+            
+              
+              <a href="/team/streetcat" class="small">
+                streetCat
+              </a>
+              
+            
+          </div>
+        </div>
+      
+      
+      </div> <!-- /.col-6 -->
+
+      <!-- RIGHT COLUMN: Blurb -->
+      <div class="col-12 col-md-6 mb-4">
+        <div class="content">Haloship is a fully reusable high-powered rocket engineered with innovation at its core. Designed without external screws, shear-pins, or epoxy, its internal substructures are entirely mechanical, enabling rapid assembly and disassembly. This modular design allows the entire rocket to be packed into a suitcase, assembled within hours before launch, and deconstructed for easy transport—revolutionizing logistical challenges faced by international teams. <br><br>
+The rocket features a mechanically and electronically redundant parachute deployment system known as the Hold Down & Release Mechanism (HDRM). Extensive simulations were conducted to ensure the operation of the HDRM during flight, as launching in the UAE was not possible. These simulations verified critical performance metrics like proper release timing and deployment reliability, ensuring everything worked perfectly on the first attempt. <br><br>
+Haloship also includes student-researched and developed avionics, boasting a custom flight computer and a high-speed data acquisition payload. Representing <strong>nyuad.space</strong> at the 2023 Spaceport America Cup, Haloship demonstrated groundbreaking possibilities in high-powered rocketry. It successfully completed its test flight on June 24th, 2023, earning 2nd place for the Dr. Gil Moore Award for Innovation.</div>
+      </div>
+
+    </div> <!-- /.row -->
+
+    <!-- SECTION: Optional heading image (centered) -->
+    <div class="section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            
+
+
+
+
+
+
+
+
+
+<div class="heading">
+  
+  
+  
+  
+  
+
+  
+    <div class="heading-image">
+      <img  src="/assets/images/projects/haloship/project-card.png"/>
+    </div>
+  
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SECTION: Authors + main content -->
+    <div class="section pt-0">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            
+            
+            
+            <div class="content"><h2 id="launch-video">Launch Video</h2>
+
+<p>Here’s a video showcasing the launch event. Although our initial plan was to launch on day 2, shifting weather conditions and final system checks required us to adapt, ultimately rescheduling to day 4 to ensure optimal conditions for a successful flight.</p>
+
+<p>The cameraman managed to track the rocket fairly well for most of the flight, though focus was lost just before the main chute deployment. From our vantage point on the ground, there wasn’t much else to see beyond the launch itself.</p>
+
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="350" src="https://www.youtube.com/embed/LpET1HB0Kto?&amp;start=9410" width="100%"></iframe>
+
+<hr />
+
+<h2 id="our-design-philosophy">Our Design Philosophy</h2>
+
+<h3 id="first-principles">First Principles</h3>
+
+<p>The development of <em>Haloship</em> was driven by two primary challenges: the stagnation in amateur and high-powered rocketry and the logistical constraints of building a sounding rocket as an international team with limited access to pyrotechnics and solid fuel grains in the UAE.</p>
+
+<p>These challenges led us to innovate in two critical areas: <strong>structures</strong> and <strong>recovery</strong>. For recovery, the idea was straightforward. Traditional systems relying on gunpowder are hazardous, difficult to source, and slow to test. We needed a mechanical solution that was both reliable and redundant (mechanically and electronically) to ensure safe, consistent parachute deployment. We also had to simulate the system thoroughly, including its degradation over time, to account for real-world conditions and edge cases.</p>
+
+<p>On the structural side, we identified several pain points with conventional construction techniques. Heavy reliance on epoxy, permanent airframe modifications, and inflexible designs force teams to commit early, limiting adaptability. International teams often ship rockets weeks in advance of competitions, which results in high costs and logistical hurdles such as clearing customs. To address these issues, we designed <em>Haloship</em> using entirely mechanical subassemblies, minimizing airframe modifications. This approach allowed the rocket to be disassembled, packed into a suitcase, and reassembled in a few hours before launch in New Mexico. After the flight, it could be deconstructed and easily brought back to the UAE, emphasizing reusability and practicality.</p>
+
+<p>This focus on mechanical solutions naturally led us to a rigorous simulation-driven process to ensure everything would work as intended.</p>
+
+<h3 id="simulation-first">Simulation First</h3>
+
+<p>Since its inception, <strong>nyuad.space</strong> has prioritized pushing the boundaries of available software tools, and Haloship exemplifies this approach. Every aspect of the rocket was meticulously modeled in CAD, down to the smallest screw, with each component indexed and linked to supplier part numbers. This comprehensive Bill of Materials (BOM) lets the team land anywhere in the world and reorder every needed part with just a single click.</p>
+
+<p>The result is a detailed CAD assembly that reflects the rocket’s full complexity, providing precise data on its center of gravity (CoG) and moments of inertia along different axes—information critical for accurate trajectory simulations. Furthermore, a complete CAD model enables seamless integration into a software toolchain for coupled structural and aerodynamic simulations, creating a feedback loop that helps optimize the rocket for anticipated flight conditions and loads.</p>
+
+<p>Because of these extensive simulation pipelines—and given that the rocket cannot be launched in the UAE—we relied on simulations to ensure the proper deployment of the release mechanisms during flight. This approach confirmed that everything would function as intended on the first attempt, eliminating the need for physical test launches. This simulation-first philosophy ensures precision, reliability, and adaptability at every stage of development.</p>
+
+<hr />
+
+<h2 id="core-design-elements">Core Design Elements</h2>
+
+<h3 id="taperbushes">Taperbushes</h3>
+
+<p>Taperbushes were our solution to replace traditional bulkheads—often made of wood and secured with epoxy or screws—by eliminating the need to drill through the airframe. Conventional bulkheads can be tricky to align precisely and, once installed, are difficult to reposition. Screwing them in also risks weakening the wood by splitting its grain.</p>
+
+<p>Our approach uses two interlocking rings that compress against each other to exert a radial force on the inside of the airframe. The outer ring has a slot and is slightly smaller than the inner ring, which wedges it outward when tightened. This design eliminates external fasteners, and the radial force can be tuned by adjusting the angle between the rings.</p>
+
+<p>Throughout <em>Haloship</em>, we employed various Taperbush configurations: near the ends of tube sections to secure metal 3D-printed couplers and around the fins, where the same wedge concept locks both into the airframe and firmly grips the motor mount tube. This modular system simplifies assembly, enhances structural integrity, and provides flexibility that traditional bulkheads can’t match.</p>
+
+<p><img src="/assets/images/projects/hdrm/taperbush.png" alt="Taperbushes" /></p>
+
+<h3 id="fin-brackets">Fin Brackets</h3>
+
+<p>Rather than relying on epoxy to bond the fins to the motor mount tube, we developed a self-aligning bracket system that tightens around the motor tube while precisely positioning the fins. By minimizing fin cant, these brackets eliminate induced roll and ensure stable flights. This design also allows you to swap fins depending on specific stability requirements, offering greater flexibility.</p>
+
+<p>Additionally, the fin brackets integrate with the Taperbushes, capping them at both ends to further limit vertical movement. This setup provides robust clamping force and enhanced resistance to flutter by incorporating multiple mechanical attachment points. Shearing off a fin would require catastrophic failure across several bolts and the airframe—an event we have yet to encounter.</p>
+
+<p><img src="/assets/images/projects/hdrm/fin-bracket.png" alt="Fin Brackets" /></p>
+
+<h3 id="aluminum-couplers">Aluminum Couplers</h3>
+
+<p>While the general rule for couplers is that they should be twice the diameter of the airframe tube in length, we designed ours out of aluminum so they could be shorter. These joints are compressed in flight to maintain rigidity and strength. The couplers also have grooves that prevent sections from rotating relative to each other. Male couplers attach to the electronics bay and serve as a mounting point for the HDRM. Female couplers center the parachute tubes and guide the spring pistons, which contact the male coupler and push the adjoining section off during deployment.</p>
+
+<p><img src="/assets/images/projects/hdrm/coupler.png" alt="Couplers" /></p>
+
+<h3 id="threaded-rods">Threaded Rods</h3>
+
+<p>The primary load-bearing structure in <em>Haloship</em> consists of threaded rods running the full length of each rocket section. These rods are anchored at both ends by Taperbushes and tensioned to apply compressive force to the airframe tube. The couplers, designed with a lip around the phenolic airframe tubing, work in tandem with the rods to create a rigid internal skeleton. This structure not only reinforces the rocket but also provides a stable mounting platform for internal assemblies such as the avionics, payload, and the recovery mechanism.</p>
+
+<p><img src="/assets/images/projects/hdrm/threaded-rods.png" alt="Threaded Rods" /></p>
+
+<h2 id="rocket-sections-overview">Rocket Sections Overview</h2>
+
+<p>Before diving into the specifics of the recovery system, it’s important to understand the main sections of <em>Haloship</em> and the subassemblies they house. The rocket is divided into three sections: the motor section, the electronics bay (e-bay), and the payload section. Each plays a critical role in both the rocket’s functionality and its recovery process.</p>
+
+<p><img src="/assets/images/projects/hdrm/rocket-sections.png" alt="Rocket Sections" /></p>
+
+<h3 id="motor-section">Motor Section</h3>
+
+<p>The motor section houses the drogue chute, along with spring pistons that provide the impulse needed for parachute deployment. It also includes a tensioning mechanism to hold the rocket sections tightly together at the coupler joints, since the HDRM’s primary role is to secure the sections but not to provide the force of separation. Together, the spring pistons, HDRM, and tensioning mechanism form the foundation of the recovery system.</p>
+
+<p><img src="/assets/images/projects/hdrm/motor-section.png" alt="Motor Section" /></p>
+
+<h3 id="electronics-bay-e-bay">Electronics Bay (E-Bay)</h3>
+
+<p>The electronics bay is the control hub, hosting the avionics and two HDRMs in a mirrored configuration. The lower HDRM connects to the motor section, while the upper HDRM links to the payload section.</p>
+
+<p>The avionics assembly is made up of a collection of plates for specific electrical subsystems, mainly power distribution and regulation, flight computers and GPS tracking, and servo interfaces. These plates are arranged in a triangular configuration inspired by the insides of Apple’s trash can Mac, forming a frame that attaches to the threaded rods with shaft collars. This setup allows the assembly to be placed anywhere along the rods. Having a set of plates also lets you swap out individual assemblies without needing to take apart the entire system.</p>
+
+<p><img src="/assets/images/projects/hdrm/avionics.png" alt="Electronics Bay" /></p>
+
+<h3 id="payload--nose-cone-section">Payload &amp; Nose cone Section</h3>
+<p>The payload section contains the main chute, a set of spring launchers for deployment, a tensioning mechanism, and the payload itself. Like the motor section, it’s designed to ensure reliable separation and deployment during recovery while also securely housing the payload.</p>
+
+<p>Since the termination point in this section is the nose cone, a version of the taperbush was designed to rest against an internal edge within the nose cone and connect to the threaded rods, transferring any shock from chute deployment to the nose cone shoulder and through the airframe. We also added a thicker threaded rod that runs to the tip of the nose cone, ending in an adhesive stud mount embedded in epoxy as a backup in case the taperbush fails.</p>
+
+<p><img src="/assets/images/projects/hdrm/payload.png" alt="Payload Section" /></p>
+
+</div>
+        
+          </div> <!-- /.col-8 -->
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+    </div> <!-- /.section -->
+
+    <!-- GALLERY / MASONRY IMAGES -->
+    <div class="row">
+      <div class="col">
+        <div class="gallery gallery-masonry">
+          
+            <div class="gallery-item">
+              <div class="gallery-image"><img src="/assets/images/projects/haloship/inserting-igniter.png"/></div>
+              
+                <div class="gallery-caption"><strong>Ted Apke</strong>, our flyer of record, installing the igniter.</div>
+              
+            </div>
+          
+            <div class="gallery-item">
+              <div class="gallery-image"><img src="/assets/images/projects/haloship/first-sight.png"/></div>
+              
+                <div class="gallery-caption">Our first sighting of the rocket after launch.</div>
+              
+            </div>
+          
+            <div class="gallery-item">
+              <div class="gallery-image"><img src="/assets/images/projects/haloship/discovery.png"/></div>
+              
+                <div class="gallery-caption">Walking closer reveals all deployment events were nominal as all the sections are seperated by the maximum length of the shock cord.</div>
+              
+            </div>
+          
+            <div class="gallery-item">
+              <div class="gallery-image"><img src="/assets/images/projects/haloship/loading.png"/></div>
+              
+                <div class="gallery-caption">Josh ensuring the rocket is secured to trailer before it begins its journey to the pads .</div>
+              
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- /.container -->
+</div> <!-- /.section -->
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script>
+  var grid = document.querySelector('.gallery');
+  var msnry;
+
+  imagesLoaded(grid, function() {
+    msnry = new Masonry(grid, {
+      itemSelector: '.gallery-item',
+      percentPosition: true,
+    });
+  });
+</script>
+
+</div>
+
+
+  <div class="footer">
+  <div class="container">
+    <div class="row">
+
+        <div class="col-12 col-md-4">
+          <div class="footer-info">
+            
+              <h2>nyuad.space</h2>
+            
+
+            
+              <p>Made in the EDS with <strong><a href='https://www.instagram.com/iamstreetcat/' target='_blank' rel='noopener'>streetCat</a></strong> and ❤️</p>
+            
+          </div>
+
+          
+              
+
+<div class="social" id="social">
+  
+  <a href="https://github.com/nyuad-space" target="blank" title="Github">
+    <i class="fab fa-github"></i>
+  </a>
+  
+  <a href="https://twitter.com/nyuad_space" target="blank" title="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  
+  <a href="https://www.instagram.com/nyuad.space/" target="blank" title="Instagram">
+    <i class="fab fa-instagram-square"></i>
+  </a>
+  
+</div>
+
+
+          
+        </div>
+
+        <div class="col-12 col-md-8 mt-gutter mt-md-0">
+          <div class="row justify-content-end">
+
+            
+              <div class="col-12 col-md-3 mt-gutter mt-md-0">
+                <div class="footer-menu">
+                  
+                    <h3>Projects</h3>
+                  
+                  
+<div class="menu-footer">
+  <ul>
+    
+      <li class="active">
+        <a href="/projects/haloship/">HALOSHIP</a>
+      </li>
+    
+      <li class="">
+        <a href="/projects/chime/">CHIME</a>
+      </li>
+    
+      <li class="">
+        <a href="/projects/hdrm/">HDRM</a>
+      </li>
+    
+  </ul>
+</div>
+
+                </div>
+              </div>
+            
+
+            
+              <div class="col-12 col-md-3 mt-gutter mt-md-0">
+                <div class="footer-menu">
+                
+                  <h3>Quick Links</h3>
+                
+                
+<div class="menu-footer">
+  <ul>
+    
+      <li class="">
+        <a href="/">Home</a>
+      </li>
+    
+      <li class="">
+        <a href="/about/">About Us</a>
+      </li>
+    
+      <li class="">
+        <a href="/team/">Team</a>
+      </li>
+    
+      <li class="">
+        <a href="/projects/">Projects</a>
+      </li>
+    
+      <li class="">
+        <a href="https://nyuad.io/en">nyuad.io</a>
+      </li>
+    
+  </ul>
+</div>
+
+                </div>
+              </div>
+            
+
+            
+        
+          </div>
+        </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+
+  <div class="bottom">
+  <div class="container relative">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-auto">
+        
+        
+          <div class="copyright">© 2025 nyuad.space</div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="/assets/js/scripts.js"></script>
+
+  <script type="text/javascript" src="/assets/js/header.js"></script>
+
+<script type="text/javascript" src="/assets/js/hamburger.js"></script>
+<script type="text/javascript" src="/assets/js/darkModeSwitch.js"></script>
+
+
+
+</body>
+</html>
